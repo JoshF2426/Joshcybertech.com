@@ -124,7 +124,27 @@
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  function closeMenu() {
+    document.getElementById("dropdownMenu").style.display = "none";
+  }
+
+  // Close menu if clicking outside
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      const menu = document.getElementById("dropdownMenu");
+      if (menu && menu.style.display === "block") {
+        menu.style.display = "none";
+      }
+    }
+  }
+</script>
+
 </body>
 </html>
